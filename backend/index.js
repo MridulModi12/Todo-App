@@ -9,7 +9,6 @@ app.use(cors())
 
 app.post("/todo", async (req,res)=> {
     const createPayload = req.body;
-    
     const parsedPayload = createTodo.safeParse(createPayload);
     if (!parsedPayload.success) {
         res.status(411).json({
@@ -52,6 +51,5 @@ app.put("/completed", async (req,res)=> {
         msg: "Todo marked as completed"
     })
 })
-
 
 app.listen(3000)
