@@ -9,6 +9,7 @@ app.use(cors())
 
 app.post("/todo", async (req,res)=> {
     const createPayload = req.body;
+    
     const parsedPayload = createTodo.safeParse(createPayload);
     if (!parsedPayload.success) {
         res.status(411).json({
