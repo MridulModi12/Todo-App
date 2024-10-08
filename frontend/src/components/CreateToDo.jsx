@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export function CreateToDo() {
 
     const [title, setTitle] = useState("")
@@ -23,7 +25,7 @@ export function CreateToDo() {
             margin: 5,
             padding: 5
         }} onClick={() => {
-            fetch("localhost:3000/todo" , {
+            fetch("http://localhost:3000/todo" , {
                 method: "POST",
                 body: JSON.stringify({
                     title: title,
